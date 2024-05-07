@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormEvent } from "react";
 import SuccessModal from "./SuccessModal";
 import ErrorModal from "./ErrorModal";
@@ -9,6 +9,30 @@ export default function Faucet() {
   const [isDisabled, setIsDisabled] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  // async function fetchIpAddress() {
+  //   try {
+  //     const response = await fetch("https://ipinfo.io/json");
+  //     const data = await response.json();
+  //     const ipAddress = data.ip;
+  //     console.log("User IP address:", ipAddress);
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // }
+
+  // get user's IP address
+  const fetchIpAddress = async () => {
+    try {
+      const response = await fetch("https://api.ipify.org?format=json");
+      console.log(response, "res");
+      const data = await response.json();
+      const ipAddress = data.ip;
+      console.log("User IP address:", ipAddress);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -28,6 +52,10 @@ export default function Faucet() {
     // success!
     setSuccessMessage(data.message);
   };
+
+  useEffect(() => {
+    fetchIpAddress();
+  }, []);
 
   return (
     <>
