@@ -9,26 +9,14 @@ export default function Faucet() {
   const [isDisabled, setIsDisabled] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [ipAddress, setIpAddress] = useState("");
 
-  // async function fetchIpAddress() {
-  //   try {
-  //     const response = await fetch("https://ipinfo.io/json");
-  //     const data = await response.json();
-  //     const ipAddress = data.ip;
-  //     console.log("User IP address:", ipAddress);
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // }
-
-  // get user's IP address
   const fetchIpAddress = async () => {
     try {
-      const response = await fetch("https://api.ipify.org?format=json");
-      console.log(response, "res");
+      const response = await fetch(process.env.NEXT_PUBLIC_GET_IP as string);
       const data = await response.json();
       const ipAddress = data.ip;
-      console.log("User IP address:", ipAddress);
+      setIpAddress(ipAddress);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -43,6 +31,7 @@ export default function Faucet() {
       method: "POST",
       body: JSON.stringify({
         address: event.currentTarget.address.value,
+        ipAddress: ipAddress
       }),
     });
     // parse response
