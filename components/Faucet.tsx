@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormEvent } from "react";
 import SuccessModal from "./SuccessModal";
 import ErrorModal from "./ErrorModal";
@@ -9,6 +9,18 @@ export default function Faucet() {
   const [isDisabled, setIsDisabled] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [ipAddress, setIpAddress] = useState("");
+
+  const fetchIpAddress = async () => {
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_GET_IP as string);
+      const data = await response.json();
+      const ipAddress = data.ip;
+      setIpAddress(ipAddress);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -19,6 +31,7 @@ export default function Faucet() {
       method: "POST",
       body: JSON.stringify({
         address: event.currentTarget.address.value,
+        ipAddress: ipAddress
       }),
     });
     // parse response
@@ -32,6 +45,10 @@ export default function Faucet() {
     setSuccessMessage(data.message);
     setIsDisabled(false);
   };
+
+  useEffect(() => {
+    fetchIpAddress();
+  }, []);
 
   return (
     <>
