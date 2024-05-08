@@ -24,9 +24,13 @@ export default function Faucet() {
     // parse response
     const data = await response.json();
     // if error
-    if (response.status != 200) return setErrorMessage(data.message);
+    if (response.status != 200) {
+      setIsDisabled(false);
+      return setErrorMessage(data.message);
+    }
     // success!
     setSuccessMessage(data.message);
+    setIsDisabled(false);
   };
 
   return (
@@ -62,7 +66,7 @@ export default function Faucet() {
                 type="submit"
                 className="disabled:opacity-25 group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                Request Funds
+                {isDisabled ? "Loading..." : "Request Funds"}
               </button>
             </div>
           </form>
