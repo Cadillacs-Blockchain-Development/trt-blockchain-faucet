@@ -6,11 +6,12 @@ type Address = {
     address: string;
 };
 
-/*
- * Get the address of the wallet funding the faucet
- * @returns {Address} - The address of the wallet funding the faucet
- * @example curl http://localhost:3000/api/address
- * response: {"address": "0x123"}
+/**
+ * The function is an asynchronous handler that retrieves an address from a wallet and sends it as a
+ * JSON response.
+ * @param {NextApiRequest} req - NextApiRequest - This is the request object representing the incoming
+ * HTTP request.
+ * @param res - NextApiResponse<Address>
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Address>) {
     const address = await wallet.getAddress();

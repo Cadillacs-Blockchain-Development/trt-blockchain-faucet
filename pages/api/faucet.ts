@@ -2,18 +2,26 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { ethers } from "ethers";
 import canRecieve from "../../src/canRecieve";
 import transferCoin from "../../src/transferCoin";
-import UserData from "../../modal/UserData.ts";
+import UserData from "../../modal/UserData";
 import { connectDb } from "../../utils/Database";
 
 type Message = {
   message: string;
 };
 
-/*
- * Transfer coin to address. This is native token ie ETH
- * @param {string} address - The address to transfer to
- * @returns {Message} - The message to display to the user, either error message or transaction hash
- * @example curl -X POST -H "Content-Type: application/json" -d '{"address": "0x123", "hcaptchaToken": "123"}' http://localhost:3000/api/faucet
+/**
+ * This TypeScript function handles a POST request, saves data to a database, verifies an address,
+ * checks for cooldown period, transfers coins, and returns appropriate responses.
+ * @param {NextApiRequest} req - NextApiRequest - Represents the incoming HTTP request in a Next.js API
+ * route handler.
+ * @param res - The `res` parameter in the code snippet refers to the response object that will be sent
+ * back to the client making the request. It is of type `NextApiResponse<Message>`, where `Message` is
+ * the type of response that will be sent back. In this case, it seems like the response
+ * @returns The handler function is returning a JSON response with a message indicating the status of
+ * the transfer process. If the transfer is successful, it will return a status of 200 with a success
+ * message. If there are any errors during the transfer process such as an invalid address,
+ * insufficient cooldown time, or unsuccessful transfer, it will return a status of 400 with an error
+ * message describing the issue.
  */
 export default async function handler(
   req: NextApiRequest,
