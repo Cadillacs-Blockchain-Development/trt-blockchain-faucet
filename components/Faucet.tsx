@@ -108,12 +108,14 @@ export default function Faucet() {
   return (
     <>
       <div className="flex min-h-full items-center mt-16 justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-[60%] space-y-8 bg-[#1e2026] p-8 rounded-3xl shadow-md">
-          <div className="flex gap-4 justify-center items-center text-3xl font-bold tracking-tight">
+        <div className="w-full md:max-w-[60%] space-y-8 bg-[#1e2026] p-8 rounded-3xl shadow-md">
+          <div className="flex gap-4 justify-center items-center text-3xl font-bold tracking-tight md:flex-row flex-col">
             <Image className="" src={logo} alt="Testnet Faucet" height={48} />
-            <div className="text-white">TrustAI</div>
-            <div className="bg-clip-text text-transparent bg-text-linear-gradient ">
-              Faucet
+            <div className="flex">
+              <div className="text-white">TrustAI</div>&nbsp;
+              <div className="bg-clip-text text-transparent bg-text-linear-gradient ">
+                Faucet
+              </div>
             </div>
           </div>
           <div className="text-[#C4C5CB] text-center t">
@@ -121,7 +123,7 @@ export default function Faucet() {
             development.
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            <div className="w-full flex gap-4 rounded-md shadow-sm">
+            <div className="w-full flex md:flex-row flex-col gap-4 rounded-md shadow-sm">
               <div className="w-full basis-[28%]">
                 <DropdownMenu>
                   <DropdownMenuTrigger className="text-white bg-[#373943] p-3 w-full flex justify-between items-center rounded-md border-gray-300 border">
@@ -132,7 +134,7 @@ export default function Faucet() {
                     <FaAngleDown />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-full h-full text-white bg-[#373943] p-3 flex flex-col justify-between items-center border-gray-300 border">
-                    <DropdownMenuLabel>Select Amount</DropdownMenuLabel>
+                    <DropdownMenuLabel>Select Token</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="w-full">
                       0.5 TRT
