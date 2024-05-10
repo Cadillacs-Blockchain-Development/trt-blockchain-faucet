@@ -6,7 +6,7 @@ import twitterLogo from "../assets/twitter.png";
 import instagramLogo from "../assets/instagram.png";
 import radditLogo from "../assets/reddit.png";
 import githubLogo from "../assets/github.png";
-import mailLogo from "assets/mail.png";
+import mailLogo from "assets/MAIL.png";
 import { acme } from "../utils/font";
 
 const Footer = () => {
