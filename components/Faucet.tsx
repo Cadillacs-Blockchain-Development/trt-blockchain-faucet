@@ -18,6 +18,7 @@ import { ImSpinner8 } from "react-icons/im";
 import { ethers } from "ethers";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { Button } from "./ui/button";
+import Footer from "./Footer";
 
 export default function Faucet() {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -180,6 +181,8 @@ export default function Faucet() {
           Add Network
         </Button> */}
       </div>
+
+      <Footer />
     </>
   );
 }
