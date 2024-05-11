@@ -113,7 +113,7 @@ export default function Faucet() {
           <div className="flex gap-4 justify-center items-center text-3xl font-bold tracking-tight md:flex-row flex-col">
             <Image className="" src={logo} alt="Testnet Faucet" height={48} />
             <div className="flex">
-              <div className="text-white">TrustAI</div>&nbsp;
+              <div className="text-white">TRUSTAI</div>&nbsp;
               <div className="bg-clip-text text-transparent bg-text-linear-gradient ">
                 Faucet
               </div>
@@ -158,7 +158,7 @@ export default function Faucet() {
               <button
                 disabled={isDisabled}
                 type="submit"
-                className="disabled:opacity-25 group relative flex w-full justify-center rounded-md border border-transparent bg-white p-4 text-lg font-medium text-black hover:bg-white/80 focus:border-[#DAA200] focus:border-2 focus:outline-none focus:ring-[#DAA200] focus:ring-offset-4"
+                className="disabled:opacity-25 group relative flex w-full justify-center rounded-md border border-transparent bg-text-linear-gradient p-4 text-lg font-medium text-black hover:bg-white/80 focus:border-[#DAA200] focus:border-2 focus:outline-none focus:ring-[#DAA200] focus:ring-offset-4"
               >
                 {isDisabled ? (
                   <ImSpinner8 className="animate-spin" />

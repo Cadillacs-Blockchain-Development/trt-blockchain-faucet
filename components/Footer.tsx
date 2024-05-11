@@ -8,6 +8,7 @@ import radditLogo from "../assets/reddit.png";
 import githubLogo from "../assets/github.png";
 import mailLogo from "assets/MAIL.png";
 import { acme } from "../utils/font";
+import { Button } from "./ui/button";
 
 const Footer = () => {
   const socialLinks = [
@@ -101,14 +102,14 @@ const Footer = () => {
               <Image src={logo} alt="logo" width={75} height={75} />
 
               <h3 className={acme.className}>
-                <span className="font-normal text-2xl text-[#fff]">Trust</span>{" "}
-                <span className="font-normal text-2xl text-[#c27803]">Ai</span>
+                <span className="font-normal text-2xl text-[#fff]">TRUST</span>{" "}
+                <span className="font-normal text-2xl bg-clip-text text-transparent bg-text-linear-gradient">
+                  AI
+                </span>
               </h3>
             </div>
             <div className="text-start text-[#71717a] font-normal text-lg max-w-[350px] mt-4">
-              TRUST AI: Binance Blockchains Ecosystem with AI integration.
-              Empower non-coders to create smart contracts, security reports,
-              and storage management effortlessly.
+            Description: Experience the game-changing TRT Chain from TRUST Al, seamlessly integrating Al for smart contracts, and storage convenience, accessible to everyone. Discover the unmatched speed and security of the blockchain, coupled with the simplicity of the easiest crypto wallet, then embark on NFT creation with ease.
             </div>
             <div className="flex justify-start space-x-4 mt-8">
               {socialLinks.map((link) => (
@@ -123,6 +124,15 @@ const Footer = () => {
                   </a>
                 </>
               ))}
+            </div>
+            <div className="w-fit mt-10">
+              <Button
+                // onClick={switchNetwork}
+                type="submit"
+                className="disabled:opacity-25 group relative flex w-full justify-center rounded-md border border-transparent bg-text-linear-gradient p-6 text-base font-medium text-black hover:bg-text-linear-gradient/80 "
+              >
+                Add Network
+              </Button>
             </div>
           </div>
 
