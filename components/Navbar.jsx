@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="flex gap-4">
         <Image src={logo} alt="logo" />
         <div className="bg-clip-text text-transparent bg-text-linear-gradient text-2xl font-semibold">
-          TrustAI
+          <span className="text-white">TRUST</span>AI
         </div>
       </div>
       <div className="flex gap-4">
