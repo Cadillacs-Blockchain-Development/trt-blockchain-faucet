@@ -67,7 +67,7 @@ export default function SuccessModal(props: Props) {
             <AlertDialogAction>
               <div
                 onClick={() =>
-                  window.open("http://13.212.80.206/tx/" + message, "_blank")
+                  window.open("http://54.251.68.185/tx/" + message, "_blank")
                 }
               >
                 View on explorer
