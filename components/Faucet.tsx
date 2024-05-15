@@ -18,7 +18,6 @@ import { ImSpinner8 } from "react-icons/im";
 import { ethers } from "ethers";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { Button } from "./ui/button";
-import Footer from "./Footer";
 
 export default function Faucet() {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -107,7 +106,7 @@ export default function Faucet() {
   }, []);
 
   return (
-    <>
+    <div className="max-w-[1440px] mx-auto">
       <div className="flex min-h-full items-center mt-16 justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full md:max-w-[60%] space-y-8 bg-[#1e2026] p-8 rounded-3xl shadow-md">
           <div className="flex gap-4 justify-center items-center text-3xl font-bold tracking-tight md:flex-row flex-col">
@@ -181,8 +180,6 @@ export default function Faucet() {
           Add Network
         </Button> */}
       </div>
-
-      <Footer />
-    </>
+    </div>
   );
 }

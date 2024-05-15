@@ -93,9 +93,9 @@ const Footer = () => {
     },
   ];
   return (
-    <>
-      <div className={`${acme.className} px-5 lg:px-80`}>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2">
+    <div className="bg-black py-6 mt-40">
+      <div className={`${acme.className} px-5 lg:px-10 max-w-[1440px] mx-auto`}>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 ">
           <div className="col-span-1 lg:col-span-2">
             {" "}
             <div className="flex items-center gap-5">
@@ -108,8 +108,12 @@ const Footer = () => {
                 </span>
               </h3>
             </div>
-            <div className="text-start text-[#71717a] font-normal text-lg max-w-[350px] mt-4">
-            Description: Experience the game-changing TRT Chain from TRUST Al, seamlessly integrating Al for smart contracts, and storage convenience, accessible to everyone. Discover the unmatched speed and security of the blockchain, coupled with the simplicity of the easiest crypto wallet, then embark on NFT creation with ease.
+            <div className="text-start text-[#71717a] font-normal text-lg mt-4">
+              Experience the game-changing TRT Chain from TRUST Al, seamlessly
+              integrating Al for smart contracts, and storage convenience,
+              accessible to everyone. Discover the unmatched speed and security
+              of the blockchain, coupled with the simplicity of the easiest
+              crypto wallet, then embark on NFT creation with ease.
             </div>
             <div className="flex justify-start space-x-4 mt-8">
               {socialLinks.map((link) => (
@@ -168,10 +172,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center text-[#ede9fe] font-normal text-sm mt-20 mb-5">
+      <div className="text-center text-[#ede9fe] font-normal text-sm mt-20">
         Copyright © 2024 Trust AI. All Rights Reserved.
       </div>
-    </>
+    </div>
   );
 };
 

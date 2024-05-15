@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 const Navbar = () => {
   return (
-    <div className="top-0 px-8 py-4 w-full flex justify-between items-center bg-[#18181E]">
+    <div className="top-0 px-8 py-4 w-full flex justify-between items-center bg-black max-w-[1440px] mx-auto">
       <div className="flex gap-4">
         <Image src={logo} alt="logo" />
         <div className="bg-clip-text text-transparent bg-text-linear-gradient text-2xl font-semibold">
