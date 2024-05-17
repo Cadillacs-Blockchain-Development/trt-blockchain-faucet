@@ -45,7 +45,7 @@ const Faqs = () => {
       <div className="text-white text-4xl text-center my-8">FAQS</div>
       <Accordion type="single" collapsible>
         {faqData.map((faq, index) => (
-          <AccordionItem value={faq.question} key={faq.question} index={index} onClick={() => setOpenIndex(index)}>
+          <AccordionItem value={faq.question} key={faq.question} onClick={() => setOpenIndex(index)}>
             <AccordionTrigger className={`${index === openIndex ? "text-[#c27803] " : `text-white`} text-xl text-left gap-4`}>
               {faq.question}
             </AccordionTrigger>
