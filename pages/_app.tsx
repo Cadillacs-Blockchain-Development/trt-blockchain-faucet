@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "../styles/globals.css";
 import Particles from "../components/ui/Particles";
-// import NET from "vanta/dist/vanta.NET.min";
+// import NET from "vanta/dist/vanta.NET.min";z
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
 

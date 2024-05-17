@@ -74,6 +74,21 @@ body {
   margin: 0;
   font-family: "Syne", sans-serif;
   font-optical-sizing: auto;
+  overflow-x: hidden;
+  /* background: black; */
+}
+::-webkit-scrollbar {
+  height: 8px;
+  width: 10px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c49507;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
 }
 /* @layer base {
     * {
