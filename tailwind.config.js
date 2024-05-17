@@ -78,6 +78,8 @@ module.exports = {
       backgroundImage: {
         "text-linear-gradient":
           "linear-gradient(180deg, #DAA200 0%, #FFD600 100%)",
+        "faucet-radial-gradient":
+          " radial-gradient(circle, rgba(231,209,133,1) 0%, rgba(0,212,255,0) 100%);",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

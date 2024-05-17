@@ -107,8 +107,9 @@ export default function Faucet() {
 
   return (
     <div className="max-w-[1440px] mx-auto">
-      <div className="flex min-h-full items-center mt-16 justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="w-full md:max-w-[60%] space-y-8 bg-[#1e2026] p-8 rounded-3xl shadow-md relative overflow-hidden z-50">
+      <div className="flex min-h-full items-center mt-16 justify-center py-12 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute inset-0 left-1/2 -translate-x-[44%] scale-[0.68] h-full w-full bg-gradient-to-r from-[#e7d185] to-[#e7d28500]  rounded-full blur-3xl z-10" />
+        <div className="w-full md:max-w-[60%] space-y-8 bg-[#1e2026] shadow-xl shadow-[#] p-8 rounded-3xl z-50 relative">
           <div className="flex gap-4 justify-center items-center text-3xl font-bold tracking-tight md:flex-row flex-col">
             <Image className="" src={logo} alt="Testnet Faucet" height={48} />
             <div className="flex">
@@ -169,6 +170,7 @@ export default function Faucet() {
           </form>
         </div>
       </div>
+
       <SuccessModal message={successMessage} />
       <ErrorModal message={errorMessage} />
       <div className="w-fit ml-4 mt-20">

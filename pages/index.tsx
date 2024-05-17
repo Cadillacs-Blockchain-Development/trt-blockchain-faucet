@@ -19,20 +19,6 @@ export default function Home() {
       <main>
         <Navbar />
         <Faucet />
-        <div className="absolute top-[20%] -left-1/4 w-screen z-10 h-dvh scale-150">
-          <Image
-            src="https://www.trust-ai.io/layer/Vector14.png"
-            alt="gradient vector"
-            fill
-          />
-        </div>
-        <div className="absolute top-0 right-0 rotate-180 w-screen z-10 h-dvh">
-          <Image
-            src="https://www.trust-ai.io/layer/Vector14.png"
-            alt="gradient vector"
-            fill
-          />
-        </div>
         <div className="bg-black mt-40">
           <Faqs />
           <Footer />
