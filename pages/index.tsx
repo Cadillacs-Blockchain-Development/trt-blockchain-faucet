@@ -26,7 +26,7 @@ export default function Home() {
             fill
           />
         </div>
-        <div className="absolute top-0 -right-[10%] rotate-180 w-screen z-10 h-dvh">
+        <div className="absolute top-0 right-0 rotate-180 w-screen z-10 h-dvh">
           <Image
             src="https://www.trust-ai.io/layer/Vector14.png"
             alt="gradient vector"

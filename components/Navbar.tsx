@@ -8,7 +8,7 @@ const Navbar = () => {
   const [mobileNavToggle, setMobileNavToggle] = useState(false);
   return (
     <>
-      <div className="top-0 px-8 py-4 w-full sm:flex hidden justify-between items-center bg-black max-w-[1440px] mx-auto z-[9999]">
+      <div className="top-0 px-8 py-4 w-full sm:flex hidden justify-between items-center bg-black max-w-[1440px] mx-auto z-50">
         <div className="flex gap-4">
           <Image src={logo} alt="logo" />
           <div className="bg-clip-text text-transparent bg-text-linear-gradient text-2xl font-semibold">
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
         <div
           className={cn(
-            "flex flex-col justify-center items-stretch gap-4 p-6 border-t border-[#c49507] bg-black absolute top-full w-full right-1/2 translate-x-1/2 transition-all z-[9999]",
+            "flex flex-col justify-center items-stretch gap-4 p-6 border-t border-[#c49507] bg-black absolute top-full w-full right-1/2 translate-x-1/2 transition-all z-50",
             mobileNavToggle ? "h-[180px] opacity-100" : "h-0 opacity-0"
           )}
         >
