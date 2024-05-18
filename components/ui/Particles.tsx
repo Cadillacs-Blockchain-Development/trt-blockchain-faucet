@@ -48,22 +48,23 @@ const ParticlesComponent = (props: any) => {
           max: 80,
           density: {
             enable: false,
-            value_area: 800,
+            value_area: 400,
           },
         },
         links: {
           enable: true, // enabling this will make particles linked together
           distance: 200, // maximum distance for linking the particles
+          width: 1,
         },
         move: {
           enable: true, // enabling this will make particles move in the canvas
-          speed: { min: 1, max: 5 }, // using a range in speed value will make particles move in a random speed between min/max values, each particles have its own value, it won't change in time by default
+          speed: { min: 1, max: 1 }, // using a range in speed value will make particles move in a random speed between min/max values, each particles have its own value, it won't change in time by default
         },
         opacity: {
           value: { min: 0.3, max: 0.7 }, // using a different opacity, to have some semitransparent effects
         },
         size: {
-          value: { min: 1, max: 3 }, // let's randomize the particles size a bit
+          value: { min: 1, max: 2 }, // let's randomize the particles size a bit
         },
         color: {
           value: "#FFD700",
