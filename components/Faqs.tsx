@@ -52,7 +52,7 @@ const Faqs = () => {
           >
             <AccordionTrigger
               className={`${
-                index === openIndex ? "text-[#c27803] " : `text-white`
+                index === openIndex ? "text-[#DAA200] " : `text-white`
               } text-xl text-left gap-4`}
             >
               {faq.question}
