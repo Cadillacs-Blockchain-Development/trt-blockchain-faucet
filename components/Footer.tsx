@@ -93,7 +93,7 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="bg-black py-6 ">
+    <div className="py-6 ">
       <div className={`${acme.className} px-5 lg:px-10 max-w-[1440px] mx-auto`}>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-2 ">
           <div className="col-span-1 lg:col-span-2">

@@ -45,7 +45,7 @@ const Faqs = () => {
       <Accordion type="single" collapsible>
         {faqData.map((faq, index) => (
           <AccordionItem value={faq.question} key={faq.question}>
-            <AccordionTrigger className="text-[#c27803] text-xl text-left gap-4">
+            <AccordionTrigger className="text-[#DAA200] text-xl text-left gap-4">
               {faq.question}
             </AccordionTrigger>
             <AccordionContent className="text-[#6b7280] text-xl">

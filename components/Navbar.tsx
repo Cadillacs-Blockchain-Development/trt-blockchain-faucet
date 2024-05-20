@@ -4,21 +4,39 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { cn } from "../lib/utils";
+import Link from "next/link";
 const Navbar = () => {
   const [mobileNavToggle, setMobileNavToggle] = useState(false);
+
+  const navLinks = [
+    { title: "Trust AI", link: "https://www.trust-ai.io" },
+    { title: "Create Token", link: "https://www.trust-ai.io/createTokenmaker" },
+    { title: "NFT AI", link: "https://www.trust-ai.io/nftai" },
+  ];
   return (
     <>
-      <div className="top-0 px-8 py-4 w-full sm:flex hidden justify-between items-center bg-black max-w-[1440px] mx-auto z-50">
+      <div className="top-0 px-8 py-4 w-full sm:flex hidden justify-between items-center max-w-[1440px] mx-auto z-50 bg-transparent">
         <div className="flex gap-4">
           <Image src={logo} alt="logo" />
           <div className="bg-clip-text text-transparent bg-text-linear-gradient text-2xl font-semibold">
             <span className="text-white">TRUST</span>AI
           </div>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
+          {navLinks.map((link, index) => (
+            <div key={link.title}>
+              <Link
+                href={link.link}
+                target="_blank"
+                className="text-white text-lg font-medium hover:text-[#DAA200] transition"
+              >
+                {link.title}
+              </Link>
+            </div>
+          ))}
           <Button
             variant={"outline"}
-            className="bg-transparent text-white font-medium"
+            className="bg-transparent ml-8 text-white font-medium"
           >
             Contact Us
           </Button>
@@ -29,7 +47,7 @@ const Navbar = () => {
       </div>
 
       {/* mobile navbar */}
-      <div className="sm:hidden relative top-0 px-8 py-4 w-full flex justify-between items-center bg-black max-w-[1440px] mx-auto z-[9999]">
+      <div className="sm:hidden relative top-0 px-8 py-4 w-full flex justify-between items-center max-w-[1440px] mx-auto z-[9999]">
         <div className="flex gap-4">
           <Image src={logo} alt="logo" />
           <div className="bg-clip-text text-transparent bg-text-linear-gradient text-2xl font-semibold">
@@ -52,6 +70,17 @@ const Navbar = () => {
             mobileNavToggle ? "h-[180px] opacity-100" : "h-0 opacity-0"
           )}
         >
+          {navLinks.map((link, index) => (
+            <div key={link.title}>
+              <Link
+                href={link.link}
+                target="_blank"
+                className="text-white text-lg font-medium hover:text-[#DAA200] transition"
+              >
+                {link.title}
+              </Link>
+            </div>
+          ))}
           <Button
             variant={"outline"}
             className="bg-transparent text-white font-medium"

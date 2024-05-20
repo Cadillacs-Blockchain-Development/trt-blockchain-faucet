@@ -16,10 +16,10 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
       {/* <Script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></Script> */}
-      <main>
+      <main className="">
         <Navbar />
         <Faucet />
-        <div className="bg-black mt-40">
+        <div className="">
           <Faqs />
           <Footer />
         </div>
