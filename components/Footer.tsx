@@ -102,7 +102,7 @@ const Footer = () => {
               <Image src={logo} alt="logo" width={75} height={75} />
 
               <h3 className={acme.className}>
-                <span className="font-normal text-2xl text-[#fff]">TRUST</span>{" "}
+                <span className="font-normal text-2xl text-[#fff]">TRUST </span>
                 <span className="font-normal text-2xl bg-clip-text text-transparent bg-text-linear-gradient">
                   AI
                 </span>

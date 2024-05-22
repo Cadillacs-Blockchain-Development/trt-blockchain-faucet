@@ -114,7 +114,7 @@ export default function Faucet() {
             <div className="flex gap-4 justify-center items-center text-3xl font-bold tracking-tight md:flex-row flex-col">
               <Image className="" src={logo} alt="Testnet Faucet" height={48} />
               <div className="flex">
-                <div className="text-white">TRUSTAI</div>&nbsp;
+                <div className="text-white">TRUST AI</div>&nbsp;
                 <div className="bg-clip-text text-transparent bg-text-linear-gradient ">
                   Faucet
                 </div>
