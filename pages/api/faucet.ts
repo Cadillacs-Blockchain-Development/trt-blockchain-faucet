@@ -30,28 +30,76 @@ export default async function handler(
   await connectDb();
   // parse the request body
   const { address, ipAddress } = JSON.parse(req.body);
+  console.log(address, ipAddress);
 
-  const saveDataToDb = await UserData.create({
-    walletAddress: address,
-    ipAddress: ipAddress,
-  });
+  try {
+    // Check if the wallet address exists in the database
+    const existingData = await UserData.findOne({ walletAddress: address });
 
-  // verify address
-  const isAddress = ethers.utils.isAddress(address);
-  // if invalid address
-  if (!isAddress) return res.status(400).json({ message: "Invalid Address" });
-  // if cooldown is enough to recieve funds
-  const recieved = await canRecieve(address);
-  // if not enough time has passed
-  if (!recieved.success)
-    return res.status(400).json({ message: recieved.message });
-  // transfer coin
-  const transfer = await transferCoin(address);
-  // if transfer was unsuccessful
-  if (!transfer.success)
-    return res.status(400).json({ message: transfer.message });
-  // update the last transfer timestamp to now
+    if (existingData) {
+      // Calculate the time difference in hours
+      const lastUpdated = new Date(existingData.date).getTime();
+      const currentTime = Date.now();
+      const timeDifference = (currentTime - lastUpdated) / (1000 * 60 * 60);
 
-  // transfer is successful
-  return res.status(200).json({ message: transfer.message });
+      // If time difference is less than 24 hours, return an error
+      if (timeDifference < 24) {
+        return res.status(400).json({
+          message: "Action not allowed within 24 hours of last update",
+        });
+      }
+
+      // Update the last transfer timestamp to now
+      const updateData: any = await UserData.updateOne(
+        { walletAddress: address },
+        { ipAddress: ipAddress, date: Date.now() }
+      );
+
+      // Handle update success or failure
+      if (updateData.nModified) {
+        console.log("Data updated successfully");
+      } else {
+        console.error("Failed to update data");
+      }
+    } else {
+      // Create new data in the database if the wallet address is not found
+      const saveDataToDb = await UserData.create({
+        walletAddress: address,
+        ipAddress: ipAddress,
+        date: Date.now(),
+      });
+
+      console.log("Data saved successfully:", saveDataToDb);
+    }
+
+    // Verify address
+    const isAddress = ethers.utils.isAddress(address);
+
+    // If invalid address
+    if (!isAddress) {
+      return res.status(400).json({ message: "Invalid Address" });
+    }
+
+    // Check if enough time has passed to receive funds
+    const received = await canRecieve(address);
+
+    // If not enough time has passed
+    if (!received.success) {
+      return res.status(400).json({ message: received.message });
+    }
+
+    // Transfer coin
+    const transfer = await transferCoin(address);
+
+    // If transfer was unsuccessful
+    if (!transfer.success) {
+      return res.status(400).json({ message: transfer.message });
+    }
+
+    // Transfer is successful
+    return res.status(200).json({ message: transfer.message });
+  } catch (error) {
+    console.error("Error:", error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
 }

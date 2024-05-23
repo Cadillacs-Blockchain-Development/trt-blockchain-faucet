@@ -29,9 +29,11 @@ export default function SuccessModal(props: Props) {
     }
   }, [message]);
 
+  console.log(process.env.NEXT_PUBLIC_EXPLORER_URL);
+
   const router = useRouter();
   return (
-    <>
+    <div>
       <AlertDialog open={open} onOpenChange={setOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -58,16 +60,19 @@ export default function SuccessModal(props: Props) {
               </div>
               <div className="mt-2">
                 <p className="text-sm text-gray-700 text-center break-words">
-                  {message}
+                  {message.slice(0, 10) + "..." + message.slice(-10)}
                 </p>
               </div>
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="sm:justify-center">
-            <AlertDialogAction>
+            <AlertDialogAction className="mt-4 md:mt-0">
               <div
                 onClick={() =>
-                  window.open("http://54.251.68.185/tx/" + message, "_blank")
+                  window.open(
+                    `${process.env.NEXT_PUBLIC_EXPLORER_URL}/tx/` + message,
+                    "_blank"
+                  )
                 }
               >
                 View on explorer
@@ -77,6 +82,6 @@ export default function SuccessModal(props: Props) {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    </>
+    </div>
   );
 }
