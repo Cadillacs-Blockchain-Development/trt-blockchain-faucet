@@ -52,7 +52,7 @@ export default function ErrorModal(props: Props) {
                   />
                 </svg>
               </div>
-              <div className="mt-2">
+              <div className="mt-2 text-center">
                 <p className="text-sm text-gray-500 break-words">{message}</p>
               </div>
             </AlertDialogDescription>
