@@ -106,7 +106,7 @@ export default function Faucet() {
   }, []);
 
   return (
-    <div className="bg-black w-screen h-full py-40">
+    <div className="w-screen h-full py-40">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex min-h-full items-center justify-center px-4 sm:px-6 lg:px-8 relative">
           <div className="absolute inset-0 left-1/2 -translate-x-[44%] scale-[0.68] h-full w-full bg-gradient-to-r from-[#e7d185] to-[#e7d28500]  rounded-full blur-3xl z-10" />
