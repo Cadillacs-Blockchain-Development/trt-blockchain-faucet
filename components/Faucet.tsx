@@ -25,7 +25,6 @@ export default function Faucet() {
   const [errorMessage, setErrorMessage] = useState("");
   const [trtAmount, setTrtAmount] = useState(0.5);
   const [ipAddress, setIpAddress] = useState("");
-
   const chainId = 2910025107;
 
   // const switchNetwork = async () => {
