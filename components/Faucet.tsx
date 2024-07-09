@@ -25,6 +25,7 @@ export default function Faucet() {
   const [errorMessage, setErrorMessage] = useState("");
   const [trtAmount, setTrtAmount] = useState(0.5);
   const [ipAddress, setIpAddress] = useState("");
+  console.log(ipAddress, "ip address state");
   const chainId = 2910025107;
 
   // const switchNetwork = async () => {
@@ -63,6 +64,7 @@ export default function Faucet() {
   const fetchIpAddress = async () => {
     try {
       const response = await fetch(process.env.NEXT_PUBLIC_GET_IP as string);
+      console.log(response, "ip address");
       const data = await response.json();
       const ipAddress = data.ip;
       setIpAddress(ipAddress);
