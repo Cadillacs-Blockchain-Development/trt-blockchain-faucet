@@ -12,6 +12,10 @@
 /.next/
 /out/
 
+#yarn
+.yarn/*
+.yarn
+
 # production
 /build
 
