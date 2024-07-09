@@ -63,7 +63,13 @@ export default function Faucet() {
 
   const fetchIpAddress = async () => {
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_GET_IP as string);
+      const response = await fetch(process.env.NEXT_PUBLIC_GET_IP as string, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
       console.log(response, "ip address");
       const data = await response.json();
       const ipAddress = data.ip;

@@ -30,7 +30,6 @@ export default async function handler(
   await connectDb();
   // parse the request body
   const { address, ipAddress } = JSON.parse(req.body);
-  console.log(address, ipAddress);
 
   try {
     // Check if the wallet address exists in the database
